@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const { registerValidator, loginValidator , forgetPasswordValidator , resetPasswordValidator } = require("./../validators/auth.validator");
-const { updateValidator , changePasswordValidator , changePasswordValidator_ByUser , changeRoleValidator , removeValidator , banValidator , unbanValidator , verifyEmailValidator , unverifyEmailValidator } = require("./../validators/user.validator");
+const { updateValidator , changePasswordValidator , changePasswordValidator_ByUser , changeRoleValidator , removeValidator , banValidator , unbanValidator , verifyEmailValidator , unverifyEmailValidator , verifyEmailValidator_ByUser } = require("./../validators/user.validator");
 
 
 const userSchema = new mongoose.Schema(

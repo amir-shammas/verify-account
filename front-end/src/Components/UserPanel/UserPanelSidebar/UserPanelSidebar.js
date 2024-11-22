@@ -25,6 +25,12 @@ export default function UserPanelSidebar() {
           </li>
 
           <li className="sidebar__item">
+            <Link className={location.pathname==="/my-account/send-link-for-verify-email" ? "sidebar__link active" : "sidebar__link"} to="send-link-for-verify-email">
+              تایید ایمیل
+            </Link>
+          </li>
+
+          <li className="sidebar__item">
             <Link className={location.pathname==="/my-account/edit-account" ? "sidebar__link active" : "sidebar__link"} to="edit-account">
               ویرایش حساب کاربری
             </Link>

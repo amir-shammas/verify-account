@@ -73,6 +73,15 @@ function UserPanelEditAccount() {
       return;
     }
 
+    if(!authContext.userInfos.isEmailVerified){
+      swal({
+        title: "لطفا ابتدا ایمیل خود را تایید کنید",
+        icon: "error",
+        buttons: "متوجه شدم",
+      });
+      return;
+    }
+
     const isValidInputsForEditUser = await validateInputsForEditUser();
     if (!isValidInputsForEditUser) {
       return; // Stop the submission if validation fails

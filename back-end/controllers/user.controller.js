@@ -107,7 +107,7 @@ exports.sendLinkForVerifyEmail = async (req, res, next) => {
       expiresIn: "5 minutes",
     });
 
-    const verifyEmailLink = `http://localhost:3000/verify-email/${token}`;
+    const verifyEmailLink = `http://localhost:3000/my-account/verify-email/${token}`;
 
     sendEmail(
       String(req.user.email),
@@ -122,11 +122,6 @@ exports.sendLinkForVerifyEmail = async (req, res, next) => {
 
     // return res.status(200).json({ message: "Reset link mailed successfully !" });
     return res.status(200).json({ message: "verifyEmail link mailed successfully !" , token: token });
-
-    // await userModel.updateValidation({...req.body , id}).catch((err) => {
-    //   err.statusCode = 400;
-    //   throw err;
-    // });
 
   }catch(error){
     next(error);
@@ -189,6 +184,8 @@ exports.getAllUsersByAdmin = async (req, res, next) => {
       filterType === "role-user" ? {role: "USER"} :
       filterType === "isBan" ? {isBan: true} :
       filterType === "notIsBan" ? {isBan: false} :
+      filterType === "isEmailVerified" ? {isEmailVerified: true} :
+      filterType === "notIsEmailVerified" ? {isEmailVerified: false} :
       {};
 
     const selectedSearchField = 

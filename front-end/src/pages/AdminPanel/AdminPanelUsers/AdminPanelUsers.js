@@ -191,184 +191,6 @@ function AdminPanelUsers() {
   }
 
 
-  // const getAllUsers = async () => {
-
-  //   try{
-  //     const loggedInUser = JSON.parse(localStorage.getItem("user"));
-  //     if(loggedInUser){
-  //       await fetch("http://localhost:4000/users", {
-  //         headers: {
-  //           Authorization: `Bearer ${loggedInUser.token}`,
-  //         }
-  //       })
-  //         .then(res => {
-  //           if (!res.ok) throw new Error('Failed to fetch users!');
-  //           return res.json();
-  //         })
-  //         .then(res => setUsers(res.data))
-  //     }else{
-  //       return;
-  //     }
-      
-  //   }catch(error){
-  //     console.log(error);
-  //     return;
-  //   }
-  // }
-    
-
-  // const getAllUsers = async (page) => {
-
-  //   try{
-  //     const loggedInUser = JSON.parse(localStorage.getItem("user")) || JSON.parse(sessionStorage.getItem("user"));
-  //     const ipp = {
-  //       itemsPerPage: itemsPerPage,
-  //     };
-  //     if(loggedInUser){
-  //       await fetch(`http://localhost:4000/users/get-all?page=${page}`, {
-  //         method: "POST",
-  //         headers: {
-  //           "Content-Type": "application/json",
-  //           "Authorization": `Bearer ${loggedInUser.token}`,
-  //         },
-  //         body: JSON.stringify(ipp)
-  //       })
-  //         .then(res => {
-  //           if (!res.ok) throw new Error('Failed to fetch users!');
-  //           return res.json();
-  //         })
-  //         .then((res) => {
-  //           setUsers(res.data);
-  //           setTotalPages(res.pagination.lastPage); // Set total pages from pagination response
-  //         })
-  //     }else{
-  //       return;
-  //     }
-      
-  //   }catch(error){
-  //     console.log(error);
-  //     return;
-  //   }
-  // }
-
-
-  // const getAllUsers = async (page , sortType) => {
-
-  //   try{
-  //     const loggedInUser = JSON.parse(localStorage.getItem("user")) || JSON.parse(sessionStorage.getItem("user"));
-  //     const bodyItems = {
-  //       itemsPerPage: itemsPerPage,
-  //       sortType: sortType,
-  //     };
-  //     if(loggedInUser){
-  //       await fetch(`http://localhost:4000/users/get-all?page=${page}&sortType=${sortType}`, {
-  //         method: "POST",
-  //         headers: {
-  //           "Content-Type": "application/json",
-  //           "Authorization": `Bearer ${loggedInUser.token}`,
-  //         },
-  //         body: JSON.stringify(bodyItems),
-  //       })
-  //         .then(res => {
-  //           if (!res.ok) throw new Error('Failed to fetch users!');
-  //           return res.json();
-  //         })
-  //         .then((res) => {
-  //           setUsers(res.data);
-  //           setSortType(res.selectedSortType);
-  //           setTotalPages(res.pagination.lastPage); // Set total pages from pagination response
-  //         })
-  //     }else{
-  //       return;
-  //     }
-      
-  //   }catch(error){
-  //     console.log(error);
-  //     return;
-  //   }
-  // }
-
-
-  // const getAllUsers = async (page , sortType , filterType) => {
-
-  //   try{
-  //     const loggedInUser = JSON.parse(localStorage.getItem("user")) || JSON.parse(sessionStorage.getItem("user"));
-  //     const bodyItems = {
-  //       itemsPerPage: itemsPerPage,
-  //       sortType: sortType,
-  //       filterType: filterType,
-  //     };
-  //     if(loggedInUser){
-  //       await fetch(`http://localhost:4000/users/get-all?page=${page}&sortType=${sortType}&filterType=${filterType}`, {
-  //         method: "POST",
-  //         headers: {
-  //           "Content-Type": "application/json",
-  //           "Authorization": `Bearer ${loggedInUser.token}`,
-  //         },
-  //         body: JSON.stringify(bodyItems),
-  //       })
-  //         .then(res => {
-  //           if (!res.ok) throw new Error('Failed to fetch users!');
-  //           return res.json();
-  //         })
-  //         .then((res) => {
-  //           setUsers(res.data);
-  //           setFilterType(res.selectedFilterType);
-  //           setSortType(res.selectedSortType);
-  //           setTotalPages(res.pagination.lastPage); // Set total pages from pagination response
-  //         })
-  //     }else{
-  //       return;
-  //     }
-      
-  //   }catch(error){
-  //     console.log(error);
-  //     return;
-  //   }
-  // }
-
-
-  // const getAllUsers = async (page , sortType , filterType , searchPhrase) => {
-
-  //   try{
-  //     const loggedInUser = JSON.parse(localStorage.getItem("user")) || JSON.parse(sessionStorage.getItem("user"));
-  //     const bodyItems = {
-  //       itemsPerPage: itemsPerPage,
-  //       sortType: sortType,
-  //       filterType: filterType,
-  //       searchPhrase: searchPhrase,
-  //     };
-  //     if(loggedInUser){
-  //       await fetch(`http://localhost:4000/users/get-all?page=${page}&sortType=${sortType}&filterType=${filterType}&searchPhrase=${searchPhrase}`, {
-  //         method: "POST",
-  //         headers: {
-  //           "Content-Type": "application/json",
-  //           "Authorization": `Bearer ${loggedInUser.token}`,
-  //         },
-  //         body: JSON.stringify(bodyItems),
-  //       })
-  //         .then(res => {
-  //           if (!res.ok) throw new Error('Failed to fetch users!');
-  //           return res.json();
-  //         })
-  //         .then((res) => {
-  //           setUsers(res.data);
-  //           setSearchPhrase(res.searchPhrase);
-  //           setFilterType(res.selectedFilterType);
-  //           setSortType(res.selectedSortType);
-  //           setTotalPages(res.pagination.lastPage); // Set total pages from pagination response
-  //         })
-  //     }else{
-  //       return;
-  //     }
-      
-  //   }catch(error){
-  //     console.log(error);
-  //     return;
-  //   }
-  // }
-
-
   const getAllUsers = async (page , sortType , filterType , searchField , searchPhrase) => {
 
     try{
@@ -819,6 +641,80 @@ function AdminPanelUsers() {
     });
   };
 
+  const verifyUserEmail = ({_id , name}) => {
+    const loggedInUser = JSON.parse(localStorage.getItem("user")) || JSON.parse(sessionStorage.getItem("user"));
+    swal({
+      title: `ایمیل ${name} تایید شود؟`,
+      icon: "warning",
+      buttons: ["خیر", "بله"],
+    }).then((result) => {
+      if (result) {
+        fetch(`http://localhost:4000/users/verify-email/${_id}`, {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${loggedInUser.token}`,
+          },
+        }).then((res) => {
+          if (!res.ok) throw new Error('Failed to verify user email!');
+          if (res.ok) {
+            // getAllUsers();
+            getAllUsers(currentPage , sortType , filterType , searchField , searchPhrase);
+            swal({
+              title: "ایمیل کاربر تایید شد",
+              icon: "success",
+              buttons: "باشه",
+            })
+          }
+        })
+        .catch((err) => {
+          swal({
+            title: "خطایی در تایید ایمیل کاربر رخ داده است",
+            icon: "error",
+            buttons: "تلاش دوباره",
+          });
+        });
+      }
+    });
+  };
+
+  const unverifyUserEmail = ({_id , name}) => {
+    const loggedInUser = JSON.parse(localStorage.getItem("user")) || JSON.parse(sessionStorage.getItem("user"));
+    swal({
+      title: `ایمیل ${name} رد شود؟`,
+      icon: "warning",
+      buttons: ["خیر", "بله"],
+    }).then((result) => {
+      if (result) {
+        fetch(`http://localhost:4000/users/unverify-email/${_id}`, {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${loggedInUser.token}`,
+          },
+        }).then((res) => {
+          if (!res.ok) throw new Error('Failed to unverify user email!');
+          if (res.ok) {
+            // getAllUsers();
+            getAllUsers(currentPage , sortType , filterType , searchField , searchPhrase);
+            swal({
+              title: "ایمیل کاربر رد شد",
+              icon: "success",
+              buttons: "باشه",
+            })
+          }
+        })
+        .catch((err) => {
+          swal({
+            title: "خطایی در رد ایمیل کاربر رخ داده است",
+            icon: "error",
+            buttons: "تلاش دوباره",
+          });
+        });
+      }
+    });
+  };
+
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.keyCode === 27) {
@@ -920,10 +816,12 @@ function AdminPanelUsers() {
           <label>فیلتر بر اساس : </label>
           <select className="items-per-page-select" defaultValue={filterType} onChange={(e) => setFilterType(e.target.value)}>
             <option value="">بدون فیلتر</option>
-            <option value="role-admin">نقش مدیر</option>
-            <option value="role-user">نقش کاربر عادی</option>
-            <option value="isBan">کاربر بن شده</option>
-            <option value="notIsBan">کاربر بن نشده</option>
+            <option value="role-admin">فقط مدیر</option>
+            <option value="role-user">فقط کاربر عادی</option>
+            <option value="isBan">فقط بن شده</option>
+            <option value="notIsBan">فقط بن نشده</option>
+            <option value="isEmailVerified">فقط ایمیل تایید شده</option>
+            <option value="notIsEmailVerified">فقط ایمیل رد شده</option>
           </select>
         </div>
 
@@ -961,6 +859,7 @@ function AdminPanelUsers() {
                     <th>تغییر رمز عبور</th>
                     <th>حذف</th>
                     <th>بن</th>
+                    <th>تایید ایمیل</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -1068,6 +967,21 @@ function AdminPanelUsers() {
                               }}
                             >
                               {user.isBan ? "خروج از بن" : "بن"}
+                            </button>
+                          )
+                        }
+                      </td>
+                      <td>
+                        {
+                          user.role !== "ADMIN" && (
+                            <button
+                              type="button"
+                              className="btn btn-danger delete-btn"
+                              onClick={() => {
+                                !user.isEmailVerified ? verifyUserEmail({...user}) : unverifyUserEmail({...user});
+                              }}
+                            >
+                              {user.isEmailVerified ? "رد" : "تایید"}
                             </button>
                           )
                         }

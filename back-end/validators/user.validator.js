@@ -117,5 +117,5 @@ module.exports = {
   banValidator,
   unbanValidator,
   verifyEmailValidator,
-  unverifyEmailValidator
+  unverifyEmailValidator,
 };

@@ -124,6 +124,15 @@ function UserPanelChangePassword() {
         return;
       }
 
+      if(!authContext.userInfos.isEmailVerified){
+        swal({
+          title: "لطفا ابتدا ایمیل خود را تایید کنید",
+          icon: "error",
+          buttons: "متوجه شدم",
+        });
+        return;
+      }
+
       const isValidInputsForChangeUserPassword = await validateInputsForChangeUserPassword();
       if (!isValidInputsForChangeUserPassword) {
         return; // Stop the submission if validation fails
