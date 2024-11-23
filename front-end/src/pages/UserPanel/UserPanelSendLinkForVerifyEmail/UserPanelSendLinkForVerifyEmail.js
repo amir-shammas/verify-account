@@ -10,6 +10,10 @@ function UserPanelSendLinkForVerifyEmail() {
 
     const loggedInUser = JSON.parse(localStorage.getItem("user")) || JSON.parse(sessionStorage.getItem("user"));
 
+    if(!JSON.parse(localStorage.getItem("user"))){
+      localStorage.setItem("user", JSON.stringify(loggedInUser));
+    }
+
     const authContext = useContext(AuthContext);
 
     const [isEmailVerified, setIsEmailVerified] = useState(authContext.userInfos.isEmailVerified);
