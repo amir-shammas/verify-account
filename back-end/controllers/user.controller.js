@@ -120,8 +120,8 @@ exports.sendLinkForVerifyEmail = async (req, res, next) => {
       `
     );
 
-    // return res.status(200).json({ message: "Reset link mailed successfully !" });
-    return res.status(200).json({ message: "verifyEmail link mailed successfully !" , token: token });
+    return res.status(200).json({ message: "Reset link mailed successfully !" });
+    // return res.status(200).json({ message: "verifyEmail link mailed successfully !" , token: token });
 
   }catch(error){
     next(error);

@@ -13,7 +13,7 @@ const router = express.Router();
 // ////////////////////////////////////////////  USER - ROUTES  ///////////////////////////////////////////
 
 
-router.route("/")
+router.route("/update-user")
  .patch(isAuthenticated, isNotBan, isEmailVerified, userController.updateUser);
 
 

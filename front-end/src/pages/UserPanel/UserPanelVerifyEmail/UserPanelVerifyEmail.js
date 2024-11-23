@@ -39,13 +39,22 @@ function UserPanelVerifyEmail() {
               }else{
                 setIsEmailVerified(true);
                 return res.json()
-                // .then(() => {
-                //     swal({
-                //     title: "لینک تایید به ایمیل شما ارسال شد",
-                //     icon: "success",
-                //     buttons: "باشه",
-                //     });
-                // })
+                .then(() => {
+                  // Fetch verified user information
+                  return fetch("http://localhost:4000/auth/me", {
+                    headers: {
+                      "Authorization": `Bearer ${loggedInUser.token}`,
+                    },
+                  });
+                })
+                .then((res) => {
+                  if (!res.ok) throw new Error('Failed to verify user email!');
+                  return res.json();
+                })
+                .then((verifiedUser) => {
+                  // Update the global context with new user information
+                  authContext.login(verifiedUser, loggedInUser.token);
+                })
               }
             })
 

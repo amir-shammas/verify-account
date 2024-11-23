@@ -12,7 +12,7 @@ function UserPanelSendLinkForVerifyEmail() {
 
     const authContext = useContext(AuthContext);
 
-    const [isEmailVerified, setIsEmailVerified] = useState(authContext.userInfos.isEmailVerified)
+    const [isEmailVerified, setIsEmailVerified] = useState(authContext.userInfos.isEmailVerified);
 
     const sendLinkForVerifyEmail = async (e) => {
         try{
@@ -64,10 +64,6 @@ function UserPanelSendLinkForVerifyEmail() {
           });
         }
       }
-
-    useEffect(() => {
-      setIsEmailVerified(authContext.userInfos.isEmailVerified);
-    }, [authContext.userInfos.isEmailVerified])
 
     return (
         <>

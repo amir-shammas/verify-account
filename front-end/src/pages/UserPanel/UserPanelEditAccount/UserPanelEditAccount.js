@@ -93,7 +93,7 @@ function UserPanelEditAccount() {
       email: editedUserEmail,
     };
 
-    fetch("http://localhost:4000/users", {
+    fetch("http://localhost:4000/users/update-user", {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
